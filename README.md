@@ -25,24 +25,29 @@
 <img src="design_cycle.png" alt="design cycle" width="300" height="300">
 
 ###### Include commentary on your experience with the design cycle during this project
+-At first I wanted to make a card holder consisting of three rectangles, but i found that the space requeired was too large and exceeded the printer's limit.
 
+-After adjusment, the original three rectangles became one large rectangle, with the upper half of both sides being empty for storing cards, and holes at the bottom to help the cards slide out.
 ---
 
 ### Code to Highlight
 ```java
-public static void followLine(Finch f) {
-	int left = f.getLine("L");
-	int right = f.getLine("R");
-	
-	System.out.println("left: " + left + " right: " + right);
-	if (left < 90) {
-		f.setMotors(0, 10);
-	} else if (right > 90) {
-		f.setMotors(10, 0);
+while (true) {
+	int lL = f.getLeftLightSensor();
+	int rL = f.getRightLightSensor();
+
+	if (lL < t && rL < t) {
+		f.setWheelVelocities(100, 100);
+	} else if (lL > t && rL < t) {
+                f.setWheelVelocities(50, 100);
+	} else if (lL < t && rL > t) {
+                f.setWheelVelocities(100, 50);
 	} else {
-		f.setMotors(10, 10);
+                f.stopWheels();
+                break;
 	}
-	f.pause(.1);
+
+	f.sleep(100);
 }
 ```
 
@@ -50,7 +55,11 @@ public static void followLine(Finch f) {
 
 ### Choose At Least Three of the Following to Include:
 - What was your motivation?
+  Don't miss up the order and hurt the happy feeling by mistake
+  
 - Why did you build this project? (Note: the answer is not "Because it was a homework assignment.")
-- What problem does it solve?
+  Because it help me organize my messy plan about my major which is mechatronic engineering
+  
 - What did you learn?
-- What makes your project stand out?
+  How to build up 3D model, some keyword in the github, and how to wirte code in a robot.
+
