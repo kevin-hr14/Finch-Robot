@@ -1,7 +1,5 @@
 # Finch-Robot
 
-# finch-robot
-
 ### Development Checklist
 
 | Completed | Task         | Description |
@@ -16,7 +14,9 @@
 <summary><strong>Inspiration for the Project</strong></summary>
 
 -I want to pass out Playing Card without moving around.
+
 -Each time Playing UNO with my friends would easily make mistake in miss up order.
+
 </details>
 
 ---
